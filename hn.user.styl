@@ -1,0 +1,77 @@
+/* ==UserStyle==
+@name         Dark HackerNews
+@namespace    gitlab.com/vednoc/dark-hackernews
+@version      0.1.0
+@description  Customizable dark theme for HackerNews.
+@author       vednoc
+@homepageURL  https://gitlab.com/vednoc/dark-hackernews
+@supportURL   https://gitlab.com/vednoc/dark-hackernews/issues
+@updateURL    https://gitlab.com/vednoc/dark-hackernews/raw/master/hn.user.styl
+@preprocessor stylus
+
+@var color dark    "Dark color.   " #2e2e2e
+@var color darker  "Darker color. " #212121
+@var color light   "Light color.  " #d1d1d1
+@var color lighter "Lighter color." #e9e9e9
+@var color icon    "Icon color.   " #e1e1e1
+@var color accent  "Accent color. " #7289da
+@var color yellow  "Yellow color. " #f0c674
+@var color orange  "Orange color. " #de935f
+@var color red     "Red color.    " #a54242
+@var color magenta "Magenta color." #b294bb
+@var color violet  "Violet color. " #85678f
+@var color blue    "Blue color.   " #5f819d
+@var color cyan    "Cyan color.   " #5e8d87
+@var color green   "Green color.  " #8c9440
+@var color shadow  "Shadow color. " #00000012
+==/UserStyle== */
+
+@-moz-document regexp("https?://genius.com/.*") {
+    :root {
+        --dark    : dark;
+        --darker  : darker;
+        --light   : light;
+        --lighter : lighter;
+        --accent  : accent;
+        --icon    : icon;
+        --shadow  : shadow;
+        --bshadow : 0 2px 3px 0 var(--shadow);
+        --yellow  : yellow;
+        --orange  : orange;
+        --red     : red;
+        --magenta : magenta;
+        --violet  : violet;
+        --blue    : blue;
+        --cyan    : cyan;
+        --green   : green;
+        --t       : transparent !important;
+    }
+
+    // * Use stylus-lang variables with CSS variables.
+    $dark    = var(--dark);
+    $darker  = var(--darker);
+    $light   = var(--light);
+    $lighter = var(--lighter);
+    $accent  = var(--accent);
+    $icon    = var(--icon);
+    $shadow  = var(--shadow);
+    $bshadow = var(--box-shadow);
+    $yellow  = var(--yellow);
+    $orange  = var(--orange);
+    $red     = var(--red);
+    $magenta = var(--magenta);
+    $violet  = var(--violet);
+    $blue    = var(--blue);
+    $cyan    = var(--cyan);
+    $green   = var(--green);
+    $t       = var(--t);
+
+    // * Color mixin.
+    // ? All colors -> colors: $light, $darker, $dark;
+    // ? Only background-color -> colors: 0, 0, $dark;
+    colors(x, y, z) {
+        if x is a 'call' { color: x !important; }
+        if y is a 'call' { border-color: y !important; }
+        if z is a 'call' { background-color: z !important; }
+    }
+}
