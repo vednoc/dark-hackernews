@@ -74,4 +74,18 @@
         if y is a 'call' { border-color: y !important; }
         if z is a 'call' { background-color: z !important; }
     }
+
+    // * Browser reset.
+    body {
+        margin: 0;
+        colors: 0, 0, $dark;
+        table {
+            colors: 0, 0, $t;
+            td {
+                colors: $lighter, 0, 0;
+                a { colors: $light, 0, 0; }
+                a:visited { colors: $magenta, 0, 0; }
+            }
+        }
+    }
 }
