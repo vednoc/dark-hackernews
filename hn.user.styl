@@ -104,4 +104,32 @@
             }
         }
     }
+
+    // * Footer.
+    #hnmain > tbody > tr:last-child {
+        td[bgcolor="#ff6600"] {
+            border-bottom: 1px solid $darker;
+            colors: 0, 0, $t;
+        }
+        a[href$="apply/"] {
+            colors: $lighter, 0, 0;
+            transition: 0.15s ease;
+            &:hover { colors: $accent, 0, 0; }
+        }
+        span.yclinks {
+            colors: $lighter, 0, 0;
+            a {
+                colors: $lighter, 0, 0;
+                transition: 0.15s ease;
+                &:hover { colors: $accent, 0, 0; }
+            }
+        }
+        form > input {
+            width: 100%;
+            max-width: 30em;
+            padding: 4px;
+            border: 1px solid $darker;
+            colors: $light, 0, $dark;
+        }
+    }
 }
