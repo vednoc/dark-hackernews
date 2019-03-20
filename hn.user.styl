@@ -88,4 +88,20 @@
             }
         }
     }
+
+    // * Navbar.
+    #hnmain > tbody > tr:first-child [bgcolor="#ff6600"] {
+        padding: 8px;
+        border-bottom: 1px solid;
+        colors: 0, $darker, $dark;
+        table[style^="padding:2px"] {
+            padding: 0px !important;
+            span { colors: $lighter, 0, 0; }
+            a {
+                colors: $lighter, 0, 0;
+                transition: 0.15s ease;
+                &:hover { colors: $light, 0, 0; }
+            }
+        }
+    }
 }
