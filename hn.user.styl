@@ -11,6 +11,7 @@
 
 @var checkbox shrink_nav "Shrink navigation to match content width" 1
 @var text max_width "Custom width for content area" 85%
+@var text b_radius "Custom border radius" 3px
 
 @var color dark    "Dark color.   " #2e2e2e
 @var color darker  "Darker color. " #212121
@@ -49,6 +50,7 @@
         --green   : green;
         --t       : transparent !important;
         --width   : max_width;
+        --radius  : b_radius;
     }
 
     // * Use stylus-lang variables with CSS variables.
@@ -69,6 +71,7 @@
     $cyan    = var(--cyan);
     $green   = var(--green);
     $t       = var(--t);
+    $radius  = var(--radius);
 
     // * Color mixin.
     // ? All colors -> colors: $light, $darker, $dark;
@@ -121,6 +124,25 @@
             margin: 0 auto;
             width: 100%;
             max-width: var(--width);
+            &.fatitem {
+                display: flex;
+                textarea {
+                    min-width: 300px;
+                    min-height: 60px;
+                    padding: 8px;
+                    border: 1px solid;
+                    border-radius: $radius;
+                    colors: $lighter, $darker, $dark;
+                }
+                input {
+                    padding: 4px 8px;
+                    border: 1px solid;
+                    border-radius: $radius;
+                    colors: $lighter, $darker, $dark;
+                    &:hover { colors: $light, 0, $darker; }
+                }
+            }
+        }
         // ? Navbar wrapper.
         [bgcolor="#ff6600"] > table {
             if shrink_nav { max-width: var(--width); }
