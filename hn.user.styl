@@ -9,6 +9,7 @@
 @updateURL    https://gitlab.com/vednoc/dark-hackernews/raw/master/hn.user.styl
 @preprocessor stylus
 
+@var checkbox shrink_nav "Shrink navigation to match content width" 1
 @var text max_width "Custom width for content area" 85%
 
 @var color dark    "Dark color.   " #2e2e2e
@@ -47,6 +48,7 @@
         --cyan    : cyan;
         --green   : green;
         --t       : transparent !important;
+        --width   : max_width;
     }
 
     // * Use stylus-lang variables with CSS variables.
@@ -119,6 +121,10 @@
             margin: 0 auto;
             width: 100%;
             max-width: var(--width);
+        // ? Navbar wrapper.
+        [bgcolor="#ff6600"] > table {
+            if shrink_nav { max-width: var(--width); }
+            margin: 0 auto;
         }
     }
 
