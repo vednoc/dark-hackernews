@@ -9,6 +9,8 @@
 @updateURL    https://gitlab.com/vednoc/dark-hackernews/raw/master/hn.user.styl
 @preprocessor stylus
 
+@var text max_width "Custom width for content area" 85%
+
 @var color dark    "Dark color.   " #2e2e2e
 @var color darker  "Darker color. " #212121
 @var color light   "Light color.  " #d1d1d1
@@ -103,6 +105,20 @@
                 transition: 0.15s ease;
                 &:hover { colors: $light, 0, 0; }
             }
+        }
+    }
+
+
+    // * Content.
+    #hnmain {
+        border: 0;
+        width: 100%;
+        // ? Custom width for content area items.
+        tbody > tr > td > table[class] {
+            padding: 4px 0px;
+            margin: 0 auto;
+            width: 100%;
+            max-width: var(--width);
         }
     }
 
