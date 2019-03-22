@@ -150,6 +150,33 @@
         }
     }
 
+    // * Content -> Comments.
+    .comtr {
+        .comhead {
+            a {
+                opacity: 0.6;
+                colors: $light, 0, 0;
+                &[color="#3c963c"] { colors: $green, 0, 0; }
+            }
+        }
+        .comment {
+            span {
+                colors: $lighter, 0, 0;
+                &.c5a { opacity: 0.75; }
+            }
+            a {
+                colors: $light, 0, 0;
+                &[href^="reply?"] {
+                    opacity: 0.6;
+                    colors: $lighter, 0, 0;
+                    transition: 0.15s ease;
+                    &:hover { opacity: 1; }
+                }
+            }
+            p { colors: $lighter, 0, 0; }
+        }
+    }
+
     // * Footer.
     #hnmain > tbody > tr:last-child {
         td[bgcolor="#ff6600"] {
