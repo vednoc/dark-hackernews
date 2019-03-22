@@ -192,6 +192,29 @@
         }
     }
 
+    // * Content -> Connectors.
+    .comment-tree {
+        tr {
+            position: relative;
+            // ? Indentation.
+            .ind {
+                position: relative;
+                &::before {
+                    height: $radius;
+                    nav: 4px, 0px, false, 15px;
+                    line: false, true;
+                    colors: 0, $darker, 0;
+                }
+                &::after {
+                    nav: 0px, false, -8px, 13px;
+                    line: true, false;
+                    colors: 0, $darker, 0;
+                }
+            }
+            &:hover .ind::before { colors: 0, $accent, 0; }
+        }
+    }
+
     // * Footer.
     #hnmain > tbody > tr:last-child {
         td[bgcolor="#ff6600"] {
