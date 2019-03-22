@@ -82,6 +82,21 @@
         if z is a 'call' { background-color: z !important; }
     }
 
+    // * Connector helper mixins.
+    line(x, y) {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        if x != false { border-left: 2px solid $darker; }
+        if y != false { border-bottom: 2px solid $darker; }
+    }
+    nav(a, b, c, d) {
+        if a != 'boolean' { top: a; }
+        if b != 'boolean' { right: b; }
+        if c != 'boolean' { bottom: c; }
+        if d != 'boolean' { left: d; }
+    }
+
     // * Browser reset.
     body {
         margin: 0;
