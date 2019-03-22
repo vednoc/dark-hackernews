@@ -174,21 +174,21 @@
                 &[color="#3c963c"] { colors: $green, 0, 0; }
             }
         }
+        // ? Comment text colors.
         .comment {
             span {
                 colors: $light, 0, 0;
-                &.c5a { opacity: 0.75; }
             }
             a {
-                colors: $light, 0, 0;
+                colors: $accent, 0, 0;
                 &[href^="reply?"] {
                     opacity: 0.6;
-                    colors: $lighter, 0, 0;
+                    colors: $light, 0, 0;
                     transition: 0.15s ease;
                     &:hover { opacity: 1; }
                 }
             }
-            p { colors: $lighter, 0, 0; }
+            p { colors: $light, 0, 0; }
         }
     }
 
