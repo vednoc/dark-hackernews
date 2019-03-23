@@ -141,6 +141,7 @@
     #hnmain {
         border: 0;
         width: 100%;
+        #pagespace { height: 16px !important; }
         // ? Custom width for content area items.
         tbody > tr > td > table[class] {
             padding: 4px 0px;
@@ -164,6 +165,8 @@
                     colors: $lighter, $darker, $dark;
                     &:hover { colors: $light, 0, $darker; }
                 }
+                // ? Reset height of the first (of the two) <br> elements.
+                + br { font-size: 0; }
             }
         }
         // ? Navbar wrapper.
