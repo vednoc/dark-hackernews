@@ -308,6 +308,25 @@
         }
     }
 
+    // * Content -> Submit page.
+    tbody > tr > td > form[method="post"] {
+        padding: 4px 0px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--width);
+        input, textarea, select {
+            padding: 4px;
+            border: 1px solid;
+            border-radius: $radius;
+            colors: $light, $darker, $dark;
+            &:focus { colors: 0, $accent, 0; }
+        }
+        input[value="submit"] {
+            transition: 0.15s ease;
+            &:hover { colors: 0, 0, $darker; }
+        }
+    }
+
     // * Footer.
     #hnmain > tbody > tr:last-child {
         td[bgcolor="#ff6600"] {
