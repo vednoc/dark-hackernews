@@ -11,6 +11,7 @@
 
 @var checkbox shrink_nav "Shrink navigation to match content width" 1
 @var checkbox sticky_nav "Enable sticky navigation bar" 1
+@var checkbox custom_con "Enable custom connector lines" 1
 @var text max_width "Custom width for content area" 85%
 @var text b_radius "Custom border radius" 3px
 
@@ -248,8 +249,8 @@
     }
 
     // * Content -> Connectors.
-    .comment-tree {
-        tr {
+    if ( custom_con == 1 ) {
+        .comment-tree tr {
             position: relative;
             // ? Indentation.
             .ind {
