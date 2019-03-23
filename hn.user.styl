@@ -106,7 +106,7 @@
         table {
             colors: 0, 0, $t;
             td {
-                colors: $lighter, 0, 0;
+                colors: $light, 0, 0;
                 a { colors: $light, 0, 0; }
                 a:visited { colors: $blue, 0, 0; }
                 a.storylink { font-weight: bold; }
@@ -222,19 +222,21 @@
     }
 
     // * Content -> Comments.
-    .comtr {
+    tr[id] {
+        // ? A bit more whitespace between post author and post content.
+        div[style*="margin-bottom:-10px"] { margin-bottom: -6px !important; }
+        // ? Comment header.
         .comhead {
+            opacity: 0.6;
             a {
-                opacity: 0.6;
                 colors: $light, 0, 0;
                 &[color="#3c963c"] { colors: $green, 0, 0; }
+                &:hover { colors: $lighter, 0, 0; }
             }
+            span { colors: $light, 0, 0; }
         }
-        // ? Comment text colors.
+        // ? Comment body.
         .comment {
-            span {
-                colors: $light, 0, 0;
-            }
             a {
                 colors: $accent, 0, 0;
                 &[href^="reply?"] {
@@ -244,7 +246,7 @@
                     &:hover { opacity: 1; }
                 }
             }
-            p { colors: $light, 0, 0; }
+            span, p { colors: $light, 0, 0; }
         }
     }
 
