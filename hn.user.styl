@@ -10,6 +10,7 @@
 @preprocessor stylus
 
 @var checkbox shrink_nav "Shrink navigation to match content width" 1
+@var checkbox sticky_nav "Enable sticky navigation bar" 1
 @var text max_width "Custom width for content area" 85%
 @var text b_radius "Custom border radius" 3px
 
@@ -117,6 +118,8 @@
         padding: 8px;
         border-bottom: 1px solid;
         colors: 0, $darker, $dark;
+        box-shadow: 0 2px 4px 0 $shadow;
+        // ? Navigation items.
         table[style^="padding:2px"] {
             padding: 0px !important;
             span { colors: $lighter, 0, 0; }
@@ -126,8 +129,13 @@
                 &:hover { colors: $light, 0, 0; }
             }
         }
+        // ? Sticky navigation.
+        if ( sticky_nav == 1 ) {
+            top: 0;
+            z-index: 999;
+            position: sticky;
+        }
     }
-
 
     // * Content.
     #hnmain {
