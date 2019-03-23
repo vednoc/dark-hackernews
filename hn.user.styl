@@ -255,9 +255,10 @@
             .ind {
                 position: relative;
                 &::before {
-                    height: $radius;
-                    nav: 4px, 0px, false, 15px;
-                    line: false, true;
+                    height: 9px;
+                    nav: 0px, 0px, false, 13px;
+                    line: true, true;
+                    border-radius: 0 0 0 9px;
                     colors: 0, $darker, 0;
                 }
                 &::after {
@@ -267,6 +268,8 @@
                 }
             }
             &:hover .ind::before { colors: 0, $accent, 0; }
+            // ? Remove connector line from the last child.
+            &[id]:last-child .ind::after { display: none; }
         }
     }
 
