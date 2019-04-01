@@ -145,7 +145,6 @@
     #hnmain {
         border: 0;
         width: 100%;
-        #pagespace { height: 16px !important; }
 
         // ? Custom width for content area items.
         tbody > tr > td > table[class] {
@@ -233,6 +232,27 @@
                 visibility: visible !important;
                 .votearrow::after { display: none; }
             }
+        }
+    }
+
+    // * Content -> Page hacks.
+    #pagespace {
+        height: 16px !important;
+        // * .../user?id=user
+        &[title*="Profile:"] ~ tr table tbody {
+            display: flex;
+            flex-direction: column;
+            tr {
+                display: flex;
+                > td:first-child { flex: 1 1 100px; }
+                > td:last-child { flex: 1 1 100%; }
+            }
+        }
+        // * .../threads?id=user
+        &[title*="comments"] ~ tr {
+            display: flex;
+            margin: 0 auto;
+            max-width: var(--width);
         }
     }
 
