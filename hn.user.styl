@@ -321,7 +321,9 @@
             max-width: var(--width);
         }
         // ? Profile settings.
-        + tr > td > form.profileform {
+        + tr form.profileform {
+            // ? Reset width in personal profile view.
+            > table[border="0"] { width: 100%; }
             input, textarea, select {
                 padding: 4px;
                 border: 1px solid;
@@ -334,7 +336,10 @@
                 &:hover { colors: 0, 0, $darker; }
             }
             // ? Reset vertical align.
-            td[valign="top"] { line-height: 28px; }
+            td[valign="top"] {
+                line-height: 28px;
+                ~ td { line-height: 28px; }
+            }
             // ? Reset links.
             a[href] > u {
                 colors: $light, 0, 0;
