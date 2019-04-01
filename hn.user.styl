@@ -125,13 +125,14 @@
             padding: 0px !important;
             span {
                 colors: $lighter, 0, 0;
-                &.topsel a { colors: $accent, 0, 0; }
+                &.topsel a, font[color="#ffffff"] { colors: $accent, 0, 0; }
             }
             a {
                 colors: $lighter, 0, 0;
                 transition: 0.15s ease;
                 &:hover { colors: $light, 0, 0; }
             }
+            img { colors: 0, $light, 0; }
         }
         // ? Sticky navigation.
         if ( sticky_nav == 1 ) {
