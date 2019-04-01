@@ -216,6 +216,16 @@
                     }
                 }
             }
+            // ? Show upvoted posts.
+            a[href*="upvoted"] {
+                visibility: visible;
+                // Upvoted entries.
+                > div[title="upvote"] {
+                    colors: 0, 0, $dark;
+                    box-shadow: 0 0 0 1px inset $darker;
+                    &::after { border-bottom-color: $blue; }
+                }
+            }
             // ? Fix a small overlapping issue with box-shadow.
             > center { padding-right: 1px; }
             // ? Hidden button.
