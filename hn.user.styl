@@ -151,8 +151,15 @@
         tbody > tr > td > table[class] {
             padding: 4px 0px;
             margin: 0 auto;
+            display: flex;
             width: 100%;
             max-width: var(--width);
+
+            // ? Comment tree buggy width.
+            &.comment-tree > tbody {
+                width: 100%;
+                .comtr { display: flex; }
+            }
 
             // ? Post/comment details.
             &.fatitem {
